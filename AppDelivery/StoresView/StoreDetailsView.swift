@@ -3,6 +3,7 @@ import SwiftUI
 struct StoreDetailsView: View {
 
   let store: StoreType
+  @Environment(\.presentationMode) var presentationMode
    
   var body: some View {
     ScrollView(showsIndicators: false) {
@@ -68,9 +69,27 @@ struct StoreDetailsView: View {
               .shadow(color: .black.opacity(0.3), radius: 20, x: 6, y: 8)
           }
           .padding()
+          
         }
       }
       .navigationTitle(store.name)
+      .navigationBarTitleDisplayMode(.inline)
+      .navigationBarBackButtonHidden()
+      .toolbar {
+        ToolbarItem(placement: .navigationBarLeading) {
+          Button {
+            presentationMode.wrappedValue.dismiss()
+          } label: {
+            HStack(spacing: 4) {
+              Image(systemName: "cart")
+              
+              Text("lojas")
+                .foregroundColor(Color("ColorRed"))
+            }
+          }
+        }
+      }
+      
     }
   }
 }
