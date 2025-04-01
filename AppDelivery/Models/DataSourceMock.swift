@@ -115,7 +115,7 @@ let storesMock: [StoreType] = [
     logoImage: "bakery-logo",
     headerImage: "bakery-header",
     location: "Bairro dos Pães",
-    stars: 5,
+    stars: 1,
     products: [
       ProductType(id: 1, name: "Hamburger Classico",
                   description: "Hambúrguer gourmet com carne de boi angus",
@@ -148,7 +148,7 @@ let storesMock: [StoreType] = [
     logoImage: "acai-panda-logo",
     headerImage: "acai-panda-header",
     location: "Praia",
-    stars: 4,
+    stars: 2,
     products: [
       ProductType(id: 1, name: "Hamburger Classico",
                   description: "Hambúrguer gourmet com carne de boi angus",
