@@ -41,8 +41,8 @@ struct ProductDetailButtonView: View {
       .background(Color("ColorRed"))
       .foregroundColor(.white)
       .cornerRadius(32)
-      .shadow(
-        color: Color("ColorRedDark").opacity(0.5), radius: 10, x: 6, y: 8)
+      .shadow(color: Color("ColorRedDark").opacity(0.5),
+              radius: 10, x: 6, y: 8)
 
     }  // Final Button
   }  // Final View

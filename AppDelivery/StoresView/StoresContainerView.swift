@@ -20,30 +20,8 @@ struct StoresContainerView: View {
 
         Spacer()
 
-        Menu("Filtrar") {
-          Button {
-            ratingFilter = 0
-          } label: {
-            Text("Limpar filtro")
-          }
-          
-          Divider()
-          
-          ForEach(1...5, id: \.self) { rating in
-            Button {
-              ratingFilter = rating
-            } label: {
-              if rating > 1 {
-                Text("\(rating) estrelas")
-              } else {
-                Text("\(rating) estrela")
-              }
-            }
-          }
-        }
-        .foregroundColor(.black)
-
-      }
+        MenuRatingFilter(ratingFilter: $ratingFilter)
+      }  // Final HStack
 
       VStack(alignment: .leading, spacing: 30) {
 

@@ -3,13 +3,12 @@ import SwiftUI
 struct StoreDetailsView: View {
 
   let store: StoreType
-  @Environment(\.presentationMode) var presentationMode
-   
+
   var body: some View {
     ScrollView(showsIndicators: false) {
       VStack(alignment: .leading) {
         StoreDetailHeaderView(store: store)
-        
+
         StoreDetailProductsView(products: store.products)
       }
       .navigationTitle(store.name)
@@ -17,23 +16,14 @@ struct StoreDetailsView: View {
       .navigationBarBackButtonHidden()
       .toolbar {
         ToolbarItem(placement: .navigationBarLeading) {
-          Button {
-            presentationMode.wrappedValue.dismiss()
-          } label: {
-            HStack(spacing: 4) {
-              Image(systemName: "cart")
-              
-              Text("lojas")
-                .foregroundColor(Color("ColorRed"))
-            }
-          }
-        }
+          NavBarHeaderItem(icon: "cart", navTitle: "lojas")
+        }  // Final ToolbarItem
       }
       // Final VStack
-      
-    } // Final ScrollView
-  }
-}
+
+    }  // Final ScrollView
+  }  // Final View
+}  // Final struct
 
 #Preview {
   StoreDetailsView(store: storesMock[0])

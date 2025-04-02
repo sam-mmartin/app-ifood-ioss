@@ -7,10 +7,7 @@ struct StoreDetailProductsView: View {
 
   var body: some View {
     VStack(alignment: .leading) {
-      Text("Produtos")
-        .font(.title2)
-        .bold()
-        .padding()
+      TextTitle2(titulo: "Produtos")
 
       ForEach(products) { product in
 

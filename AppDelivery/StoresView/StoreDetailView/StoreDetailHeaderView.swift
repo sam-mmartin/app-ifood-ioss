@@ -31,11 +31,7 @@ struct StoreDetailHeaderView: View {
 
         Spacer()
 
-        ForEach(1...store.stars, id: \.self) { _ in
-          Image(systemName: "star.fill")
-            .foregroundColor(.yellow)
-            .font(.caption)
-        }
+        Stars(stars: store.stars)
       }
       .padding(.vertical, 8)
       .padding(.horizontal)
