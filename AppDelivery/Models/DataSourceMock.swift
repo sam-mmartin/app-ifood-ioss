@@ -1,5 +1,11 @@
 import Foundation
 
+let bannersMock: [OrderType] = [
+  OrderType(id: 1, name: "banner burguer", image: "barbecue-banner"),
+  OrderType(id: 2, name: "banner prato-feito", image: "brazilian-meal-banner"),
+  OrderType(id: 3, name: "banner poke", image: "pokes-banner"),
+]
+
 let ordersMock: [OrderType] = [
   OrderType(id: 1, name: "Restaurantes", image: "hamburguer"),
   OrderType(id: 2, name: "Farmácia", image: "farmacia"),
@@ -18,13 +24,15 @@ let storesMock: [StoreType] = [
     location: "Jacareí, SP",
     stars: 4,
     products: [
-      ProductType(id: 1, name: "Hamburger Classico",
-                  description: "Hambúrguer gourmet com carne de boi angus",
+      ProductType(
+        id: 1, name: "Hamburger Classico",
+        description: "Hambúrguer gourmet com carne de boi angus",
         image: "classic_burger", price: 19.99
       ),
       ProductType(
         id: 2, name: "Hamburguer com Bacon",
-        description:"Hambúrguer artesanal com picanha, queijo, bacon e molho especial",
+        description:
+          "Hambúrguer artesanal com picanha, queijo, bacon e molho especial",
         image: "bacon_burger", price: 14.99
       ),
       ProductType(
@@ -41,7 +49,7 @@ let storesMock: [StoreType] = [
         id: 5, name: "Sorvete de baunilha",
         description: "Copo de sorvete de baunilha",
         image: "vanilla_ice_cream", price: 9.99
-      )
+      ),
     ]),
   StoreType(
     id: 2,
@@ -51,13 +59,15 @@ let storesMock: [StoreType] = [
     location: "Centro Comercial",
     stars: 3,
     products: [
-      ProductType(id: 1, name: "Hamburger Classico",
-                  description: "Hambúrguer gourmet com carne de boi angus",
+      ProductType(
+        id: 1, name: "Hamburger Classico",
+        description: "Hambúrguer gourmet com carne de boi angus",
         image: "classic_burger", price: 19.99
       ),
       ProductType(
         id: 2, name: "Hamburguer com Bacon",
-        description:"Hambúrguer artesanal com picanha, queijo, bacon e molho especial",
+        description:
+          "Hambúrguer artesanal com picanha, queijo, bacon e molho especial",
         image: "bacon_burger", price: 14.99
       ),
       ProductType(
@@ -74,7 +84,7 @@ let storesMock: [StoreType] = [
         id: 5, name: "Sorvete de baunilha",
         description: "Copo de sorvete de baunilha",
         image: "vanilla_ice_cream", price: 9.99
-      )
+      ),
     ]),
   StoreType(
     id: 3,
@@ -84,13 +94,15 @@ let storesMock: [StoreType] = [
     location: "Zona Sul",
     stars: 4,
     products: [
-      ProductType(id: 1, name: "Hamburger Classico",
-                  description: "Hambúrguer gourmet com carne de boi angus",
+      ProductType(
+        id: 1, name: "Hamburger Classico",
+        description: "Hambúrguer gourmet com carne de boi angus",
         image: "classic_burger", price: 19.99
       ),
       ProductType(
         id: 2, name: "Hamburguer com Bacon",
-        description:"Hambúrguer artesanal com picanha, queijo, bacon e molho especial",
+        description:
+          "Hambúrguer artesanal com picanha, queijo, bacon e molho especial",
         image: "bacon_burger", price: 14.99
       ),
       ProductType(
@@ -107,7 +119,7 @@ let storesMock: [StoreType] = [
         id: 5, name: "Sorvete de baunilha",
         description: "Copo de sorvete de baunilha",
         image: "vanilla_ice_cream", price: 9.99
-      )
+      ),
     ]),
   StoreType(
     id: 4,
@@ -117,13 +129,15 @@ let storesMock: [StoreType] = [
     location: "Bairro dos Pães",
     stars: 1,
     products: [
-      ProductType(id: 1, name: "Hamburger Classico",
-                  description: "Hambúrguer gourmet com carne de boi angus",
+      ProductType(
+        id: 1, name: "Hamburger Classico",
+        description: "Hambúrguer gourmet com carne de boi angus",
         image: "classic_burger", price: 19.99
       ),
       ProductType(
         id: 2, name: "Hamburguer com Bacon",
-        description:"Hambúrguer artesanal com picanha, queijo, bacon e molho especial",
+        description:
+          "Hambúrguer artesanal com picanha, queijo, bacon e molho especial",
         image: "bacon_burger", price: 14.99
       ),
       ProductType(
@@ -140,7 +154,7 @@ let storesMock: [StoreType] = [
         id: 5, name: "Sorvete de baunilha",
         description: "Copo de sorvete de baunilha",
         image: "vanilla_ice_cream", price: 9.99
-      )
+      ),
     ]),
   StoreType(
     id: 5,
@@ -150,13 +164,15 @@ let storesMock: [StoreType] = [
     location: "Praia",
     stars: 2,
     products: [
-      ProductType(id: 1, name: "Hamburger Classico",
-                  description: "Hambúrguer gourmet com carne de boi angus",
+      ProductType(
+        id: 1, name: "Hamburger Classico",
+        description: "Hambúrguer gourmet com carne de boi angus",
         image: "classic_burger", price: 19.99
       ),
       ProductType(
         id: 2, name: "Hamburguer com Bacon",
-        description:"Hambúrguer artesanal com picanha, queijo, bacon e molho especial",
+        description:
+          "Hambúrguer artesanal com picanha, queijo, bacon e molho especial",
         image: "bacon_burger", price: 14.99
       ),
       ProductType(
@@ -173,6 +189,6 @@ let storesMock: [StoreType] = [
         id: 5, name: "Sorvete de baunilha",
         description: "Copo de sorvete de baunilha",
         image: "vanilla_ice_cream", price: 9.99
-      )
+      ),
     ]),
 ]
