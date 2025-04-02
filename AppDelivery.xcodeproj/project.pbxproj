@@ -70,8 +70,8 @@
 		8F6F7CBA2D9597060052D040 = {
 			isa = PBXGroup;
 			children = (
-				8F8AE98F2D9C50A0005DCD16 /* .gitignore */,
 				8F6F7CC52D9597060052D040 /* AppDelivery */,
+				8F8AE98F2D9C50A0005DCD16 /* .gitignore */,
 				8F6F7CC42D9597060052D040 /* Products */,
 			);
 			sourceTree = "<group>";
