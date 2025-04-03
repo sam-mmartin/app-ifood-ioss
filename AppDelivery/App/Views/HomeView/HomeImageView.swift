@@ -6,7 +6,7 @@ struct HomeImageView: View {
   @State private var imageOffset: CGSize = .zero
 
   var body: some View {
-    Image("home")
+    Image(.home)
       .resizable()
       .scaledToFit()
       .shadow(radius: 60)

@@ -22,20 +22,7 @@ struct HomeView: View {
           HomeImageView(isAnimating: isAnimating)
 
           ZStack {
-            Capsule()
-              .fill(Color("ColorRed"))
-              .opacity(0.2)
-
-            Capsule()
-              .fill(Color("ColorRed"))
-              .opacity(0.2)
-              .padding(8)
-
-            Text("Descubra mais")
-              .font(.title2)
-              .bold()
-              .foregroundColor(Color("ColorRedDark"))
-              .offset(x: 20)
+            BaseButtonView()
 
             HStack {
               Capsule()
@@ -46,16 +33,7 @@ struct HomeView: View {
             }  // Final HStack
 
             HStack {
-              ZStack {
-                Circle()
-                  .fill(Color("ColorRed"))
-
-                Circle()
-                  .fill(Color("ColorRedDark"))
-                  .padding(8)
-
-                Image(systemName: "chevron.right.2")
-              }  // Final ZStack
+              ButtonCircleView()
 
               Spacer()
             }
@@ -108,4 +86,38 @@ struct HomeView: View {
 
 #Preview {
   HomeView()
+}
+
+struct BaseButtonView: View {
+  var body: some View {
+    Capsule()
+      .fill(Color("ColorRed"))
+      .opacity(0.2)
+
+    Capsule()
+      .fill(Color("ColorRed"))
+      .opacity(0.2)
+      .padding(8)
+
+    Text("Descubra mais")
+      .font(.title2)
+      .bold()
+      .foregroundColor(Color("ColorRedDark"))
+      .offset(x: 20)
+  }
+}
+
+struct ButtonCircleView: View {
+  var body: some View {
+    ZStack {
+      Circle()
+        .fill(Color("ColorRed"))
+      
+      Circle()
+        .fill(Color("ColorRedDark"))
+        .padding(8)
+      
+      Image(systemName: "chevron.right.2")
+    }
+  }
 }

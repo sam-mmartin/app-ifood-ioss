@@ -2,11 +2,12 @@ import SwiftUI
 
 struct StoresContainerView: View {
 
-  let title = "Lojas"
   @State private var ratingFilter = 0
+  let title = "Lojas"
+  var stores: [StoreType]
 
   var filteredStores: [StoreType] {
-    return storesMock.filter { store in
+    return stores.filter { store in
       store.stars >= ratingFilter
     }
   }
@@ -26,18 +27,13 @@ struct StoresContainerView: View {
       VStack(alignment: .leading, spacing: 30) {
 
         if filteredStores.isEmpty {
-          Text("Nenhum resultado encontrado.")
-            .font(.title2)
-            .bold()
-            .foregroundColor(Color("ColorRed"))
-            .padding(.vertical, 32)
-            .frame(maxWidth: .infinity)
+          TextTitleNotFound()
         } else {
-          ForEach(filteredStores) { mock in
+          ForEach(filteredStores) { element in
             NavigationLink {
-              StoreDetailsView(store: mock)
+              StoreDetailsView(store: element)
             } label: {
-              StoreItemView(store: mock)
+              StoreItemView(store: element)
             }
           }  // Final Foreach
         }  // Final If-else
@@ -53,5 +49,5 @@ struct StoresContainerView: View {
 }  // Final struct
 
 #Preview {
-  StoresContainerView()
+  StoresContainerView(stores: storesMock)
 }

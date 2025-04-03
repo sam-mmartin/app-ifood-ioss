@@ -3,6 +3,7 @@ import SwiftUI
 struct ProductDetailView: View {
 
   let product: ProductType
+  var resource = HomeResource()
   @State private var productQuantity = 1
 
   var body: some View {
@@ -15,9 +16,28 @@ struct ProductDetailView: View {
 
       Spacer()
 
-      ProductDetailButtonView()
+      ProductDetailButtonView {
+        Task {
+          await confirmOrder()
+        }
+      }
     }  // Final VStack
   }  // Final View
+  
+  func confirmOrder() async {
+    do {
+      let result = try await resource.confirmOrder(product: product)
+      
+      switch result {
+      case .success(let message):
+        print(message!)
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    } catch {
+      print(error.localizedDescription)
+    }
+  }
 }  // Final struct
 
 #Preview {
@@ -25,9 +45,13 @@ struct ProductDetailView: View {
 }
 
 struct ProductDetailButtonView: View {
+
+  // Closure
+  var onButtonPress: () -> Void
+
   var body: some View {
     Button {
-      //
+      onButtonPress()
     } label: {
       HStack {
         Image(systemName: "cart")
@@ -41,8 +65,9 @@ struct ProductDetailButtonView: View {
       .background(Color("ColorRed"))
       .foregroundColor(.white)
       .cornerRadius(32)
-      .shadow(color: Color("ColorRedDark").opacity(0.5),
-              radius: 10, x: 6, y: 8)
+      .shadow(
+        color: Color("ColorRedDark").opacity(0.5),
+        radius: 10, x: 6, y: 8)
 
     }  // Final Button
   }  // Final View
